@@ -112,6 +112,6 @@ let miData = [
 let vm = new Vue({
 	el: "#app",
 	data:{
-		
+		miData: miData,
 	}
 });
