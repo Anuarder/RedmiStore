@@ -1,3 +1,10 @@
+
+$(function(){
+	$(".navbar-toggler").click(function(){
+		$(".menu-collapse").toggleClass("collapsed");
+	})
+})
+
 let miData = [
 	{
 		"Модель":"Xiaomi MI Mix 2",
@@ -15,6 +22,7 @@ let miData = [
 		"Макс. разрешение видео":"3840x2160 (4K)",
 		"Интерфейсы":"Wi-Fi 802.11ac, Wi-Fi Direct, Bluetooth 5.0, IRDA, USB, NFC",
 		"count":"6",
+		"price":"200.000тг",
 		"file":"./media/Mix2.jpg"
 	},
 	{
@@ -33,6 +41,7 @@ let miData = [
 		"Макс. разрешение видео":"3840x2160 (4K)",
 		"Интерфейсы":"Wi-Fi 802.11ac, Wi-Fi Direct, Bluetooth 5.0, IRDA, USB, NFC",
 		"count":"8",
+		"price":"132.000тг",
 		"file":"./media/MiNote2.jpg"
 	},
 	{
@@ -51,6 +60,7 @@ let miData = [
 		"Макс. разрешение видео":"3840x2160 (4K)",
 		"Интерфейсы":"Wi-Fi 802.11ac, Wi-Fi Direct, Bluetooth 5.0, IRDA, USB, NFC",
 		"count":"11",
+		"price":"93.000тг",
 		"file":"./media/MiNote5.jpg"
 	},
 	{
@@ -69,6 +79,7 @@ let miData = [
 		"Макс. разрешение видео":"1920*1080",
 		"Интерфейсы":"Wi-Fi 802.11ac, Wi-Fi Direct, Bluetooth 5.0, IRDA, USB, NFC",
 		"count":"3",
+		"price":"62.000тг",
 		"file":"./media/MiNote4.jpg"
 	},
 	{
@@ -87,6 +98,7 @@ let miData = [
 		"Макс. разрешение видео":"3840x2160 (4K)",
 		"Интерфейсы":"Wi-Fi 802.11ac, Wi-Fi Direct, Bluetooth 5.0, IRDA, USB, NFC",
 		"count":"5",
+		"price":"68.000тг",
 		"file":"./media/MiA1.jpg"
 	},
 	{
@@ -105,6 +117,7 @@ let miData = [
 		"Макс. разрешение видео":"1920*1080",
 		"Интерфейсы":"Wi-Fi 802.11ac, Wi-Fi Direct, Bluetooth 5.0, IRDA, USB, NFC",
 		"count":"13",
+		"price":"77.000тг",
 		"file":"./media/MiPlus5.jpg"
 	}
 ];
