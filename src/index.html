@@ -81,12 +81,12 @@
                   data-target="#shopping-cart"
                   data-toggle="collapse">
                   Корзина
-                  <span class="badge badge-info badge-pill">4</span>
+                  <span class="badge badge-info badge-pill">{{shoppingCart.count}}</span>
                 </div>
                   <div class="collapse mt-2" id="shopping-cart">
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item list-item">Количество товара: 4</li>
-                      <li class="list-group-item list-item">Общая сумма: 2312тг.</li>
+                      <li class="list-group-item list-item">Количество товара: {{shoppingCart.count}}</li>
+                      <li class="list-group-item list-item">Общая сумма: {{shoppingCart.price}}тг.</li>
                     </ul>
                     <button class="btn btn-info w-100">Показать полностью</button> 
                     <button class="btn btn-success w-100 mt-1">Оформить заказ</button>

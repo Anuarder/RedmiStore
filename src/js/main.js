@@ -126,5 +126,10 @@ let vm = new Vue({
 	el: "#app",
 	data:{
 		miData: miData,
+		shoppingCart:{
+			count: 2,
+			items: '',
+			price: 54524
+		}
 	}
 });
