@@ -1,15 +1,54 @@
 .menu-collapse{
     position: absolute;
-    background-color: #fff;
+    background-color: #2D2E3C;
+    color: #fff;
     top: 0;
     left: 0;
-    width: 255px;
+    width: 300px;
     bottom: 0;
     z-index: 8;
     overflow: auto;
     transition: all 0.3s ease-in-out;
-    
   }
+  .close{
+    color: #fff;
+  }
+  .close:hover{
+    color: #f1f1f1;
+  }
+  .article{
+    letter-spacing: 1px;
+    margin-left: 20px;
+  }
+  .category{
+    font-size: 18px;
+  }
+  .category-btn{
+    padding: 10px;
+    border-bottom: 1px solid #272833;
+  }
+  .list-group-item{
+    background-color: #272833;
+  }
+  .category-btn:hover{
+    cursor: pointer;
+    border-left: 3px solid #f88c8c;
+  }
+  .list-item{
+    font-size: 16px;
+  }
+  .view-btn{
+      color: #f1f1f1;
+  }
+  .view-btn.active{
+      color: #2cdfff;
+  }
+  .view-btn:hover{
+      color: #2cdfff;
+      cursor: pointer;
+  }
+  
+  /* Scrollbar */
   .menu-collapse::-webkit-scrollbar {
       width: 2px;
   }
@@ -30,5 +69,5 @@
   }
   
   .menu-collapse.collapsed{
-      left: -255px;
+      left: -300px;
   }

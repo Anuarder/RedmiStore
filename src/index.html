@@ -11,13 +11,12 @@
 <body>
   <div id="app">
     <header class="header">
-      <nav class="navbar navbar-light bg-light">
-        <button class="navbar-toggler">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </nav>
-      <div class="menu-collapse collapsed text-center">
-        <button type="button" class="close p-3">
+      <span class="" @click="collapseToggle" v-if="false">
+        <i class="fa fa-bars fa-3x"></i>
+      </span>
+      <div class="menu-collapse text-center" 
+          :class="{collapsed: classes.isCollapsed}">
+        <button type="button" class="close p-3" @click="collapseToggle">
           <span aria-hidden="true">&times;</span>
         </button>
         <div class="article">
@@ -26,7 +25,7 @@
           </div>
         </div>
         
-        <div class="menu text-left border-top mt-3">
+        <div class="menu text-left mt-3">
           <div class="category">
             <ul class="list-group list-group-flush">
               <li class="list-group-item category-btn">
@@ -51,13 +50,19 @@
                 </div>
                 <div class="collapse mt-2" id="view">
                     <div class=" d-flex justify-content-around">
-                      <div class="">
+                      <div class="view-btn" 
+                          :class = "{active: classes.viewActive == 1}"
+                          @click = "viewActiveToggle(1)">
                         <i class="fa fa-window-maximize"></i>
                       </div>
-                      <div class="">
+                      <div class="view-btn" 
+                          :class = "{active: classes.viewActive == 2}"
+                          @click = "viewActiveToggle(2)">
                         <i class="fa fa-th"></i>
                       </div>
-                      <div class="">
+                      <div class="view-btn" 
+                          :class = "{active: classes.viewActive == 3}"
+                          @click = "viewActiveToggle(3)">
                         <i class="fa fa-list"></i>
                       </div>
                     </div>
@@ -98,13 +103,10 @@
                     <button class="btn btn-success w-100 mt-1">Оформить заказ</button>
                   </div>
               </li>
-                  
 
             </ul>
-            
           </div>
         </div>
-        
       </div>
     </header>
 

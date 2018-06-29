@@ -1,9 +1,4 @@
 
-$(function(){
-	$(".navbar-toggler, .close").click(function(){
-		$(".menu-collapse").toggleClass("collapsed");
-	})
-})
 
 let miData = [
 	{
@@ -125,11 +120,23 @@ let miData = [
 let vm = new Vue({
 	el: "#app",
 	data:{
+		classes: {
+			isCollapsed: true,
+			viewActive: 1,
+		},
 		miData: miData,
 		shoppingCart:{
 			count: 2,
 			items: '',
 			price: 54524
+		}
+	},
+	methods:{
+		collapseToggle(){
+			this.classes.isCollapsed = !this.classes.isCollapsed;
+		},
+		viewActiveToggle(id){
+			this.classes.viewActive = id;
 		}
 	}
 });
