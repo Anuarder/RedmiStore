@@ -1,6 +1,6 @@
 
 $(function(){
-	$(".navbar-toggler").click(function(){
+	$(".navbar-toggler, .close-btn").click(function(){
 		$(".menu-collapse").toggleClass("collapsed");
 	})
 })

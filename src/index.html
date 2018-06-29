@@ -11,16 +11,36 @@
 <body>
   <div id="app">
     <header class="header">
-      <nav class="navbar navbar-dark bg-dark">
+      <nav class="navbar navbar-light bg-light">
         <button class="navbar-toggler">
           <span class="navbar-toggler-icon"></span>
         </button>
       </nav>
-      <div class="menu-collapse collapsed">
-        <div class="bg-dark p-4">
-          <h4 class="text-white">Collapsed content</h4>
-          <span class="text-muted">Toggleable via the navbar brand.</span>
+      <div class="menu-collapse collapsed text-center">
+        <button class="btn close-btn">Close</button>
+        <div class="text">
+          <h3>Mi Store</h3>
         </div>
+        <hr class="w-50">
+        <div class="menu-btn text-left">
+          <div class="category">
+            <a 
+              class="" 
+              data-toggle="collapse" 
+              href="#collapseExample">
+              Вид
+            </a>
+      
+            <div class="collapse text-center" id="collapseExample">
+              <div class="btn-group">
+                <button class="btn btn-primary">Slider</button>
+                <button class="btn btn-primary">Grid</button>
+                <button class="btn btn-primary">Table</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </div>
     </header>
 
