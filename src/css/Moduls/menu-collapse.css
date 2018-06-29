@@ -1,0 +1,34 @@
+.menu-collapse{
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    width: 255px;
+    bottom: 0;
+    z-index: 8;
+    overflow: auto;
+    transition: all 0.3s ease-in-out;
+    
+  }
+  .menu-collapse::-webkit-scrollbar {
+      width: 2px;
+  }
+  
+  /* Track */
+  .menu-collapse::-webkit-scrollbar-track {
+      background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  .menu-collapse::-webkit-scrollbar-thumb {
+      background: #a7a7a7; 
+  }
+  
+  /* Handle on hover */
+  .menu-collapse::-webkit-scrollbar-thumb:hover {
+      background: #8f8f8f; 
+  }
+  
+  .menu-collapse.collapsed{
+      left: -255px;
+  }

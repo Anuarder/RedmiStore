@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="media/favicon.ico">
-    <title>Redmi Store</title>
+    <title>mi</title>
 </head>
 <body>
   <div id="app">
@@ -17,27 +17,85 @@
         </button>
       </nav>
       <div class="menu-collapse collapsed text-center">
-        <button class="btn close-btn">Close</button>
-        <div class="text">
-          <h3>Mi Store</h3>
+        <button type="button" class="close p-3">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="article">
+          <div class="text-left mt-3">
+            <h4>Mi Store</h4>
+          </div>
         </div>
-        <hr class="w-50">
-        <div class="menu-btn text-left">
+        
+        <div class="menu text-left border-top mt-3">
           <div class="category">
-            <a 
-              class="" 
-              data-toggle="collapse" 
-              href="#collapseExample">
-              Вид
-            </a>
-      
-            <div class="collapse text-center" id="collapseExample">
-              <div class="btn-group">
-                <button class="btn btn-primary">Slider</button>
-                <button class="btn btn-primary">Grid</button>
-                <button class="btn btn-primary">Table</button>
-              </div>
-            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item category-btn">
+                <div 
+                  data-target="#admin"
+                  data-toggle="collapse">
+                  Личный кабинет
+                </div>
+                <div class="collapse mt-3" id="admin">
+                  <div class="user-btn mt-2">
+                    <button class="btn btn-primary">Регистрация</button>
+                    <button class="btn btn-success">Войти</button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="list-group-item category-btn">
+                <div 
+                  data-target="#view"
+                  data-toggle="collapse">
+                  Вид
+                </div>
+                <div class="collapse mt-2" id="view">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item list-item">Слайдер</li>
+                      <li class="list-group-item list-item">Значки</li>
+                      <li class="list-group-item list-item">Таблица</li>
+                    </ul>
+                </div>
+              </li>
+
+              <li class="list-group-item category-btn">
+                <div
+                  data-target="#contact"
+                  data-toggle="collapse">
+                  Контакты
+                </div>
+                <div class="collapse mt-2" id="contact">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item list-item">
+                      Адрес: Абая 43
+                    </li>
+                    <li class="list-group-item list-item">
+                      Телефон: <a href="tel:8(777)222-22-22">8(777)222-22-22</a> 
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="list-group-item category-btn">
+                <div  class="d-flex justify-content-between align-items-center"
+                  data-target="#shopping-cart"
+                  data-toggle="collapse">
+                  Корзина
+                  <span class="badge badge-info badge-pill">4</span>
+                </div>
+                  <div class="collapse mt-2" id="shopping-cart">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item list-item">Количество товара: 4</li>
+                      <li class="list-group-item list-item">Общая сумма: 2312тг.</li>
+                    </ul>
+                    <button class="btn btn-info w-100">Показать полностью</button> 
+                    <button class="btn btn-success w-100 mt-1">Оформить заказ</button>
+                  </div>
+              </li>
+                  
+
+            </ul>
+            
           </div>
         </div>
         
