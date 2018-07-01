@@ -2,3 +2,29 @@
 @import "Plugins/font-awesome-4.7.0/css/font-awesome.min.css";
 @import "Moduls/menu-collapse.css";
 
+body{
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.navbar{
+    background-color: #fff;
+    box-shadow: 0 10px 10px -5px #f3f3f3;
+}
+.view-btn-group{
+    width: 150px;
+    margin: 20px;
+}
+.view-btn{
+    color: #d6d6d6;
+}
+.view-btn.active{
+    color: #424242;
+}
+.view-btn:hover{
+    color: #424242;
+    cursor: pointer;
+}
+.active-modal{
+    display: block;
+}
