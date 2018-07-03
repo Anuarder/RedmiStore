@@ -131,6 +131,11 @@ let miData = [
 let vm = new Vue({
 	el: "#app",
 	data:{
+		orderData: {
+			name: '',
+			address: '',
+			phone: ''
+		},
 		classes: {
 			isCollapsed: true,
 			viewActive: 1,
@@ -204,7 +209,6 @@ let vm = new Vue({
 			`;
 			swal({
 				content: modalContent
-				
 			});
 		},
 		addToCart(id){
@@ -239,6 +243,27 @@ let vm = new Vue({
 			  });
 			this.shoppingCart.count ++;
 			this.shoppingCart.price += parseInt(this.miData[id].Price);
+		},
+		buyNow(id){
+			this.addToCart(id);
+		},
+		checkoutOrder(id){
+			this.addToCart(id);
+			this.classes.viewActive = 3;
+			this.classes.isCollapsed = true;
+		},
+		order(){
+			swal({
+				icon: "success",
+				title: "Заказ обработан"
+			});
+			console.log("Товары")
+			this.shoppingCart.items.forEach(element => {
+				console.log(`Модель: ${element.model}, Кол-во: ${element.count}, Цена: ${element.price}\n`);
+			});
+			console.log(`Количество товаров: ${this.shoppingCart.count}`)
+			console.log(`Общая цена: ${this.shoppingCart.price}`)
+			console.log(`Данные заказчика\nИмя: ${this.orderData.name}\nАдрес: ${this.orderData.address}\nТелефон: ${this.orderData.phone}`);
 		}
 	}
 });
