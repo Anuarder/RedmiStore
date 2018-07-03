@@ -10,31 +10,31 @@
     overflow: auto;
     transition: all 0.3s ease-in-out;
   }
-  .close{
+  .menu-collapse .close{
     color: #fff;
   }
-  .close:hover{
+  .menu-collapse .close:hover{
     color: #f1f1f1;
   }
-  .article{
+  .menu-collapse .article{
     letter-spacing: 1px;
     margin-left: 20px;
   }
-  .category{
+  .menu-collapse .category{
     font-size: 18px;
   }
-  .category-btn{
+  .menu-collapse .category-btn{
     padding: 10px;
     border-bottom: 1px solid #272833;
   }
-  .list-group-item{
+  .menu-collapse .list-group-item{
     background-color: #272833;
   }
-  .category-btn:hover{
+  .menu-collapse .category-btn:hover{
     cursor: pointer;
     border-left: 3px solid #f88c8c;
   }
-  .list-item{
+  .menu-collapse .list-item{
     font-size: 16px;
   }
 
