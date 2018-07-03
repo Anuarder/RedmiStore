@@ -79,10 +79,25 @@
                 </div>
                   <div class="collapse mt-2" id="shopping-cart">
                     <ul class="list-group list-group-flush">
+                      <li class="list-group-item list-item" v-for="value in shoppingCart.items">
+                        <table class="table  table-sm cart">
+                          <tr>
+                          <td>Модель</td>
+                          <td>{{value.model}}</td>
+                          </tr>
+                          <tr>
+                          <td>Количество</td>
+                          <td>{{value.count}}</td>
+                          </tr>
+                          <tr>
+                          <td>Цена</td>
+                          <td>{{value.price}}</td>
+                          </tr>
+                        </table>
+                      </li>
                       <li class="list-group-item list-item">Количество товара: {{shoppingCart.count}}</li>
-                      <li class="list-group-item list-item">Общая сумма: {{shoppingCart.price}}тг.</li>
+                      <li class="list-group-item list-item">Общая сумма: {{shoppingCart.price}} тг.</li>
                     </ul>
-                    <button class="btn btn-info w-100">Показать полностью</button> 
                     <button class="btn btn-success w-100 mt-1">Оформить заказ</button>
                   </div>
               </li>
@@ -94,7 +109,6 @@
     </header>
 
     <main class="main">
-      
       <div class="container products text-center">
         <div class="view-btn-group">
           <div class="d-flex justify-content-around">
@@ -123,90 +137,69 @@
                     <span v-if="miProduct.Count != 0">Да</span>
                     <span v-else>Нет</span>
                   </p>
-                  <p class="lead">Цена: {{miProduct.Price}}</p>
+                  <p class="lead">Цена: {{miProduct.Price}} тг</p>
                   <p>{{miProduct.CPU}}, 
                     {{miProduct.GPU}}, 
                     {{miProduct.RAM}}, 
                     {{miProduct.ROM}}</p>
-                  <a  href="#" 
-                      data-toggle="modal" 
-                      :data-target="'#product' + miProduct.id">
+                  <a  href="#" @click="showCharacteristics(miProduct.id)">
                       Показать все характеристики
                   </a>
                 </p>
-                <a href="#" class="btn btn-primary">
+                <a href="#" class="btn btn-primary" @click="addToCart(miProduct.id)">
                   <i class="fa fa-plus-square"></i>
                 </a>
                 <a href="#" class="btn btn-success">
                   <i class="fa fa-shopping-cart"></i>
                 </a>
               </div>
-              <div class="modal fade" :id="'product' + miProduct.id">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title">{{miProduct.Model}}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <img :src="miProduct['File']" class="img-fluid">
-                    <p class="lead">Характеристики</p>
-                    <table class="table table-striped">
-                      <tr>
-                        <td>Модель</td>
-                        <td>{{miProduct.Model}}</td>
-                      </tr>
-                      <tr>
-                        <td>Вес</td>
-                        <td>{{miProduct.Weight}}</td>
-                      </tr>
-                      <tr>
-                        <td>Процессор</td>
-                        <td>{{miProduct.CPU}}</td>
-                      </tr>
-                      <tr>
-                        <td>Видеокарта</td>
-                        <td>{{miProduct.GPU}}</td>
-                      </tr>
-                      <tr>
-                        <td>Оперативная память</td>
-                        <td>{{miProduct.RAM}}</td>
-                      </tr>
-                      <tr>
-                        <td>Постоянная память</td>
-                        <td>{{miProduct.ROM}}</td>
-                      </tr>
-                      <tr>
-                        <td>Основная камера</td>
-                        <td>{{miProduct.Camera.Primary}}</td>
-                      </tr>
-                      <tr>
-                        <td>Фронтальная камера</td>
-                        <td>{{miProduct.Camera.Secondary}}</td>
-                      </tr>
-                      <tr>
-                        <td>Видео</td>
-                        <td>{{miProduct.Video}}</td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-info" data-dismiss="modal">Закрыть</button>
-                  </div>
-                </div>
-              </div>
-              </div>
+              
             </div>
           </div>
         </div>
-        <div class="table-view" v-if="classes.viewActive == 2">
-          <ul class="list-group">
+        <div class="table-view" v-if="classes.viewActive == 2" v-for="miProduct in miData">
+          <ul class="list-group" >
             <li class="list-group-item">
-              Реализация таблицы
+              <div class="row">
+                <div class="table-view-content col-sm-10">
+                  <div class="row">
+                    <div class="col-sm-2">
+                      <img :src="miProduct.File" class="img-fluid table-view-img">
+                    </div>
+                    <div class="col-sm-10 ">
+                      <p class="font-weight-bold">{{miProduct.Model}}</p>
+                      <p>
+                        {{miProduct.CPU}},
+                        {{miProduct.GPU}},
+                        {{miProduct.RAM}},
+                        {{miProduct.ROM}}
+                      </p>
+                      <a href="#" @click="showCharacteristics(miProduct.id)">
+                          Показать все характеристики
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="shopping-cart-btn col-sm-2 mt-2">
+                  <a href="#" class="btn btn-primary" @click="addToCart(miProduct.id)">
+                    <i class="fa fa-plus-square"></i>
+                  </a>
+                  <a href="#" class="btn btn-success">
+                    <i class="fa fa-shopping-cart"></i>
+                  </a>
+                  <p class="lead mt-2">
+                    {{miProduct.Price}}
+                  </p>
+                  <p class="mt-2">
+                      Наличие: 
+                      <span v-if="miProduct.Count != 0">Да</span>
+                      <span v-else>Нет</span>
+                    </p>
+                </div>
+              </div>
             </li>
           </ul>
+          
         </div>
       </div>
     </main>
@@ -215,7 +208,11 @@
       
     </footer>
   </div>
+
+
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/Plugins/lodash.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/Plugins/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
