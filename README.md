@@ -32,11 +32,11 @@
 
 Так же, присутсвует корзина в виде массива объектов, которая сохраняет, обрабатывает и выводит список товаров.
 
-![](C:\Users\Anuar\Desktop\Portfolio\RedmiStore\assets\shoppingCart.gif)
+![shoppingCart example](assets\shoppingCart.gif)
 
 Товар можно оформить сразу, без предварительного добавления в корзину, нажам на кнопку купить. При этом корзина автоматический очистится, и добавит новый элемент.
 
-![](C:\Users\Anuar\Desktop\Portfolio\RedmiStore\assets\BuyNow.gif)
+![BuyNow example](assets\BuyNow.gif)
 
 При оформлении, собираются данные с корзины и формы заполнения, и отсылаются для дальнейшего действия.
 
