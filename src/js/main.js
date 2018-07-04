@@ -245,7 +245,7 @@ let vm = new Vue({
 			this.shoppingCart.price += parseInt(this.miData[id].Price);
 		},
 		buyNow(id){
-			this.shoppingCart.items = []; //Очистка корзины
+			this.clearCart();
 			this.addToCart(id);
 			this.checkoutOrder();
 		},
@@ -265,6 +265,11 @@ let vm = new Vue({
 			console.log(`Количество товаров: ${this.shoppingCart.count}`)
 			console.log(`Общая цена: ${this.shoppingCart.price}`)
 			console.log(`Данные заказчика\nИмя: ${this.orderData.name}\nАдрес: ${this.orderData.address}\nТелефон: ${this.orderData.phone}`);
+		},
+		clearCart(){
+			this.shoppingCart.items = [];
+			this.shoppingCart.count = 0;
+			this.shoppingCart.price = 0;
 		}
 	}
 });
