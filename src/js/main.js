@@ -246,9 +246,9 @@ let vm = new Vue({
 		},
 		buyNow(id){
 			this.addToCart(id);
+			this.checkoutOrder();
 		},
-		checkoutOrder(id){
-			this.addToCart(id);
+		checkoutOrder(){
 			this.classes.viewActive = 3;
 			this.classes.isCollapsed = true;
 		},
