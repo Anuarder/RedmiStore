@@ -245,6 +245,7 @@ let vm = new Vue({
 			this.shoppingCart.price += parseInt(this.miData[id].Price);
 		},
 		buyNow(id){
+			this.shoppingCart.items = []; //Очистка корзины
 			this.addToCart(id);
 			this.checkoutOrder();
 		},
